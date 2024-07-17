@@ -1,0 +1,106 @@
+[gd_scene load_steps=12 format=3 uid="uid://carxf4oiyv2ok"]
+
+[ext_resource type="Script" path="res://ui.gd" id="1_7kxga"]
+[ext_resource type="Texture2D" uid="uid://b8vjye8diq2ic" path="res://Assets/wolfweapons.png" id="1_bkfa2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ge6s8"]
+atlas = ExtResource("1_bkfa2")
+region = Rect2(64, 32, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lungx"]
+atlas = ExtResource("1_bkfa2")
+region = Rect2(128, 32, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ncq0"]
+atlas = ExtResource("1_bkfa2")
+region = Rect2(192, 32, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2pgd"]
+atlas = ExtResource("1_bkfa2")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdwat"]
+atlas = ExtResource("1_bkfa2")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dyndq"]
+atlas = ExtResource("1_bkfa2")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1db58"]
+atlas = ExtResource("1_bkfa2")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_giikt"]
+atlas = ExtResource("1_bkfa2")
+region = Rect2(256, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fdufv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ge6s8")
+}],
+"loop": false,
+"name": &"gun_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lungx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ncq0")
+}],
+"loop": false,
+"name": &"gun_shoot",
+"speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2pgd")
+}],
+"loop": false,
+"name": &"knife_ide",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdwat")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dyndq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1db58")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_giikt")
+}],
+"loop": false,
+"name": &"stab",
+"speed": 16.0
+}]
+
+[node name="ui" type="CanvasLayer"]
+script = ExtResource("1_7kxga")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(539, 425)
+scale = Vector2(5.90625, 8.57151)
+sprite_frames = SubResource("SpriteFrames_fdufv")
+animation = &"knife_ide"
+autoplay = "knife_ide"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -577.0
+offset_top = -95.0
+offset_right = 580.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0.666667, 1)
